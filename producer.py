@@ -6,7 +6,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
-print("🚀 Sending simulated transactions to Kafka...")
+print("Sending simulated transactions to Kafka...")
 
 while True:
     txn = {
@@ -19,3 +19,4 @@ while True:
     producer.send("transactions", txn)
     print("Sent:", txn)
     time.sleep(1)
+
