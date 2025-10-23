@@ -108,6 +108,10 @@ Consume messages:
   ```docker exec -it kafka kafka-console-consumer --topic ai_alerts --bootstrap-server localhost:9092 --from-beginning```
 
 
+---
+
+## AI Alerts
+
 The anonymous transcations are outputted like this with explaination: 
 
 AI explanation: This transaction might be considered suspicious for several reasons:
