@@ -1,0 +1,5 @@
+pathway
+kafka-python
+langchain
+langchain-openai
+openai
