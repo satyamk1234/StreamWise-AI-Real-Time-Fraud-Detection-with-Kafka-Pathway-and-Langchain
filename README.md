@@ -1,9 +1,9 @@
-# 🤖 AI-Driven Real-Time Transaction Anomaly Detection  
+# AI-Driven Real-Time Transaction Anomaly Detection  
 ### Powered by Apache Kafka, Pathway, LangChain, and OpenAI GPT-4o-mini
 
 ---
 
-## 🚀 Overview
+## Overview
 This project demonstrates a **real-time AI streaming pipeline** where:
 - 🧾 A **Python producer** streams synthetic transactions into **Kafka**
 - ⚡ **Pathway** consumes and filters suspicious transactions live
@@ -16,7 +16,7 @@ Designed to run seamlessly across:
 
 ---
 
-## 🧱 Architecture
+## Architecture
 [Producer] → (transactions)
 ↓
 [Kafka Broker] ← Docker (Windows)
@@ -28,19 +28,19 @@ Designed to run seamlessly across:
 
 ---
 
-## ⚙️ Components
+## Components
 
-|      Component        |     Technology             |                Description                       |
-|-----------------------|----------------------------|--------------------------------------------------|
-| 🧾 **Producer**      | Python                    | Streams random transactions to Kafka             |
-| ⚡ **Consumer**      | Pathway                   | Detects suspicious events in real time           |
-| 🧠 **AI Service**    | LangChain + GPT-4o-mini   | Adds natural-language insights                   |
-| 🧱 **Broker**        | Apache Kafka              | Handles live data streaming                      |
+|    Component      |     Technology            |                Description                       |
+|-------------------|---------------------------|--------------------------------------------------|
+| **Producer**      | Python                    | Streams random transactions to Kafka             |
+| **Consumer**      | Pathway                   | Detects suspicious events in real time           |
+| **AI Service**    | LangChain + GPT-4o-mini   | Adds natural-language insights                   |
+| **Broker**        | Apache Kafka              | Handles live data streaming                      |
 
 
 ---
 
-## 🖥️ Setup Instructions
+## Setup Instructions
 
 1️⃣ Kafka on Windows (Docker)
 Create a file named docker-compose.yml:
