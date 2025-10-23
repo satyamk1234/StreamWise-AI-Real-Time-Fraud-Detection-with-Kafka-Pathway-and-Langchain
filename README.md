@@ -93,11 +93,12 @@ Consume messages:
   ```docker exec -it kafka kafka-console-consumer --topic ai_alerts --bootstrap-server localhost:9092 --from-beginning```
 
 
-You’ll see AI-enriched transaction logs such as:
+The anonymous transcations are outputted like this with explaination: 
 
-  {
-    "txn_id": 91823,
-    "amount": 987.3,
-    "country": "IN",
-    "ai_explanation": "Transaction amount unusually high; may indicate suspicious behavior."
-  }
+AI explanation: This transaction might be considered suspicious for several reasons:
+1. **Unusual Amount**: The amount of 819.06 could be significantly higher than typical transaction amounts for the user or within the region, raising flags.
+2. **Timestamp and Transaction Diff**: The proximity of the timestamp and time suggests that this transaction occurred very rapidly, which could indicate automated or fraudulent behavior.
+3. **Country**: Depending on the user's usual transaction behavior, a transaction from or to a certain country may be flagged as suspicious. If this user typically makes transactions in a different country, it could raise concerns about identity theft or unauthorized transactions.
+4. **User Profile**: If user_id 46 is a new or relatively inactive account that suddenly engages in high-value transactions, this might also indicate suspicious activity.
+
+Considering these factors, the transaction could warrant further investigation to determine its legitimacy.
