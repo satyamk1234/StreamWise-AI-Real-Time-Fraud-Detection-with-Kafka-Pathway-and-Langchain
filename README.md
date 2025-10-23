@@ -52,8 +52,11 @@ Check:
   ```docker ps```
 
 Create topics:
+
   ```docker exec -it kafka kafka-topics --create --topic transactions --bootstrap-server localhost:9092```
+  
   ```docker exec -it kafka kafka-topics --create --topic alerts --bootstrap-server localhost:9092```
+  
   ```docker exec -it kafka kafka-topics --create --topic ai_alerts --bootstrap-server localhost:9092```
 
 
@@ -84,6 +87,7 @@ Set your OpenAI key:
   ```python3 pathway_consumer1.py```
 
  ⚠ Alerts(in Windows)
+ 
   ```docker exec -it kafka kafka-console-consumer --topic alerts --bootstrap-server localhost:9092 --from-beginning```
 
 🧠 LangChain AI Service(in WSL2)
