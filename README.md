@@ -43,13 +43,19 @@ Designed to run seamlessly across:
 ## Setup Instructions
 
 1️⃣ Kafka on Windows (Docker)
-Create a file named docker-compose.yml:
+Created a file named **docker-compose.yml** to start apache/kafka on docker:
 
 Run: 
   ```bash docker compose up -d```
 
 Check: 
   ```docker ps```
+
+Create topics:
+  ```docker exec -it kafka kafka-topics --create --topic transactions --bootstrap-server localhost:9092```
+  ```docker exec -it kafka kafka-topics --create --topic alerts --bootstrap-server localhost:9092```
+  ```docker exec -it kafka kafka-topics --create --topic ai_alerts --bootstrap-server localhost:9092```
+
 
 
 2️⃣ WSL2 (Ubuntu) — Python Environment
@@ -69,15 +75,18 @@ Set your OpenAI key:
 
 3️⃣ Run Components
 
-🧾 Producer
+🧾 Producer(in Windows)
 
-  ```python3 producer.py```
+  ```python producer.py```
 
-⚡ Pathway Consumer
+⚡ Pathway Consumer(in WSL2)
 
   ```python3 pathway_consumer1.py```
 
-🧠 LangChain AI Service
+ ⚠ Alerts(in Windows)
+  ```docker exec -it kafka kafka-console-consumer --topic alerts --bootstrap-server localhost:9092 --from-beginning```
+
+🧠 LangChain AI Service(in WSL2)
 
   ```python3 langchain_service.py```
 
@@ -87,6 +96,8 @@ Set your OpenAI key:
 Check topics:
 
   ```docker exec -it kafka kafka-topics --list --bootstrap-server localhost:9092```
+
+  Three topics: transactions , alerts and ai_alerts
 
 Consume messages:
 
